@@ -7,11 +7,11 @@ export const Hero = () => {
     <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/30" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -25,19 +25,19 @@ export const Hero = () => {
                 <span className="text-gradient block">Buraxılış</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Discover rare pressings, new releases, and timeless classics. 
-                Experience music the way it was meant to be heard.
+                Nadir nəşrləri, yeni buraxılışları və zamansız klassikləri kəşf edin.
+                Musiqini eşitmək üçün nəzərdə tutulduğu kimi yaşayın.
               </p>
             </div>
-            
+
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <Button size="lg" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-8">
-                Shop Now
+                İndi alış-veriş edin
                 <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="gap-2 border-muted-foreground/30 hover:bg-secondary">
                 <Play className="w-4 h-4" />
-                Listen Preview
+                Dinləmə Önizləməsi
               </Button>
             </div>
 
@@ -70,7 +70,7 @@ export const Hero = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Vinyl record */}
               <div className="relative z-10 animate-float">
                 <VinylRecord size="xl" spinning />

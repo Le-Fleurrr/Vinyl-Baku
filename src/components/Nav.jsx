@@ -6,10 +6,10 @@ export const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "New Arrivals", href: "#new" },
-    { name: "Genres", href: "#genres" },
-    { name: "Pre-Orders", href: "#preorders" },
-    { name: "About", href: "#about" },
+    { name: "Yeni Gələnlər", href: "#new" },
+    { name: "Janrlar", href: "#genres" },
+    { name: "Hesab", href: "#account" },
+    { name: "Haqqımızda", href: "#about" },
   ];
 
   return (

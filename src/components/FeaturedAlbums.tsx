@@ -14,12 +14,12 @@ interface Album {
 }
 
 const albums: Album[] = [
-  { id: 1, title: "Midnight Dreams", artist: "Luna Eclipse", price: 34.99, genre: "Jazz", year: 2024, isNew: true },
-  { id: 2, title: "Electric Soul", artist: "The Voltage", price: 29.99, genre: "Rock", year: 1978 },
-  { id: 3, title: "Analog Heart", artist: "Sarah Wave", price: 39.99, genre: "Electronic", year: 2023, isNew: true },
-  { id: 4, title: "Blue Notes", artist: "Miles Beyond", price: 44.99, genre: "Jazz", year: 1965 },
-  { id: 5, title: "Summer Haze", artist: "The Drifters", price: 27.99, genre: "Indie", year: 2022 },
-  { id: 6, title: "Neon Nights", artist: "Synthwave Co.", price: 32.99, genre: "Synthwave", year: 2024, isNew: true },
+  { id: 1, title: "Hurry Up Tomorrow", artist: "The Weeknd", price: 150, genre: "R&B/Soul", year: 2025, isNew: true },
+  { id: 2, title: "Rodeo", artist: "Travis Scott", price: 130, genre: "Hip-Hop/Rap", year: 2015 },
+  { id: 3, title: "The College Dropout", artist: "Kanye West", price: 150, genre: "Pop", year: 2004 },
+  { id: 4, title: "Short 'N Sweet", artist: "Sabrina Carpenter", price: 150, genre: "Pop", year: 2024, isNew: true },
+  { id: 5, title: "Call Me If You Get Lost", artist: "Tyler, The Creator", price: 150, genre: "Hip-Hop/Rap", year: 2021 },
+  { id: 6, title: "Charm", artist: "Clairo", price: 150, genre: "Indie", year: 2024, isNew: true },
 ];
 
 export const FeaturedAlbums = () => {
@@ -32,14 +32,14 @@ export const FeaturedAlbums = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-primary font-medium tracking-widest text-sm uppercase mb-2">
-              New This Week
+              Bu Həftə Yeni
             </p>
             <h2 className="text-4xl md:text-5xl font-serif font-bold">
-              Featured Records
+              Seçilmiş Yazılar
             </h2>
           </div>
           <Button variant="outline" className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary">
-            View All Collection
+            Bütün Kolleksiyaya Baxın
           </Button>
         </div>
 
@@ -55,7 +55,7 @@ export const FeaturedAlbums = () => {
               {/* New Badge */}
               {album.isNew && (
                 <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  NEW
+                  YENI
                 </span>
               )}
 
