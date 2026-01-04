@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/Le-Fleurrr/Vinyl-Baku",
+  "homepage": "https://le-fleurrr.github.io/Vinyl-Baku/",
   "type": "commonjs",
   "dependencies": {
     "body-parser": "^2.2.1",
