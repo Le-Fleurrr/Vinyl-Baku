@@ -18,11 +18,11 @@ export const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <p className="text-primary font-medium tracking-widest text-sm uppercase animate-fade-in">
-                Premium Vinyl Koleksiyası
+                Premium Vinyl Kolleksiyası
               </p>
               <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-                Yeni
-                <span className="text-gradient block">Buraxılış</span>
+                Ən Yeni
+                <span className="text-gradient block">Bestsellerlər</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 Nadir nəşrləri, yeni buraxılışları və zamansız klassikləri kəşf edin.

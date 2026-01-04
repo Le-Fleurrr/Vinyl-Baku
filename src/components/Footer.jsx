@@ -18,10 +18,10 @@ export const Footer = () => {
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                 <div className="w-3 h-3 rounded-full bg-background" />
               </div>
-              <span className="font-serif text-2xl font-bold">Groove</span>
+              <span className="font-serif text-2xl font-bold">Vinyl Baku</span>
             </a>
             <p className="text-muted-foreground text-sm mb-6">
-              Your destination for premium vinyl records. Experience music the way it was meant to be heard.
+              Premium vinil valları üçün məkanınız. Musiqini eşitmək üçün nəzərdə tutulduğu kimi yaşayın.
             </p>
             <div className="flex gap-4">
               {[Instagram, Twitter, Youtube, Facebook].map((Icon, index) => (
