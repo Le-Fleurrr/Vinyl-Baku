@@ -45,15 +45,15 @@ export const Hero = () => {
             <div className="flex gap-12 pt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <div>
                 <p className="text-3xl font-serif font-bold text-gradient">15K+</p>
-                <p className="text-sm text-muted-foreground">Vinyl Records</p>
+                <p className="text-sm text-muted-foreground">Vinyl</p>
               </div>
               <div>
                 <p className="text-3xl font-serif font-bold text-gradient">500+</p>
-                <p className="text-sm text-muted-foreground">Rare Pressings</p>
+                <p className="text-sm text-muted-foreground">Nadir Preslər</p>
               </div>
               <div>
                 <p className="text-3xl font-serif font-bold text-gradient">50+</p>
-                <p className="text-sm text-muted-foreground">Genres</p>
+                <p className="text-sm text-muted-foreground">Janrlar</p>
               </div>
             </div>
           </div>
