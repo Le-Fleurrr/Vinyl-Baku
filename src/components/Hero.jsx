@@ -58,10 +58,10 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Vinyl Visual */}
+
           <div className="relative flex justify-center lg:justify-end animate-scale-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative">
-              {/* Album sleeve */}
+
               <div className="absolute -left-8 top-8 w-80 h-80 bg-card rounded-lg shadow-2xl flex items-center justify-center overflow-hidden border border-border">
                 <div className="w-full h-full bg-gradient-to-br from-amber-900/50 via-orange-900/30 to-background flex items-center justify-center">
                   <div className="text-center p-8">
@@ -71,7 +71,7 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* Vinyl record */}
+
               <div className="relative z-10 animate-float">
                 <VinylRecord size="xl" spinning={true} vinylColor="purple" />
               </div>

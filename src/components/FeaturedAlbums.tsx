@@ -36,7 +36,7 @@ export const FeaturedAlbums = () => {
             </h2>
           </div>
           <Button variant="outline" className="self-start md:self-auto border-muted-foreground/30 hover:bg-secondary">
-            Bütün Kolleksiyaya Baxın
+            Bütün Kolleksiyalara Baxın
           </Button>
         </div>
 
