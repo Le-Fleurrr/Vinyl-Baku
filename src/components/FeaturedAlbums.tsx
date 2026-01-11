@@ -92,7 +92,7 @@ export const FeaturedAlbums = () => {
                 )}
                 
                 {/* Background decorative gradient */}
-                <div className={`absolute w-40 h-40 bg-gradient-to-br ${getSleeveColorClass(album.sleeveColor)} rounded-lg transform -rotate-6`} />
+                <div className={`absolute w-40 h-40 bg-gradient-to-br ${getSleeveColorClass((album as any).sleeveColor)} rounded-lg transform -rotate-6`} />
                 
                 {/* Vinyl disc - MOVES on hover */}
                 <div 
