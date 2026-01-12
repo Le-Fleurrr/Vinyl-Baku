@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { VinylRecord } from "./VinylRecord.tsx";
 import { Button } from "./ui/Button.tsx";
 import { ShoppingCart, Heart, ArrowLeft } from "lucide-react";
 import { albums } from "./Albums.jsx";
@@ -8,7 +7,7 @@ import { albums } from "./Albums.jsx";
 export const AlbumPage = () => {
   const { albumId } = useParams();
   const navigate = useNavigate();
-  const [isSpinning, setIsSpinning] = useState(false);
+  const [imageError, setImageError] = useState(false);
   
   const album = albums.find(a => a.id === parseInt(albumId));
 
@@ -40,37 +39,25 @@ export const AlbumPage = () => {
         </Button>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Left: Album Art & Vinyl */}
+          {/* Left: Album Art from Cloudinary */}
           <div className="sticky top-8">
-            <div 
-              className="relative h-96 flex items-center justify-center cursor-pointer"
-              onMouseEnter={() => setIsSpinning(true)}
-              onMouseLeave={() => setIsSpinning(false)}
-            >
-              {album.image && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-80 h-80 rounded-lg overflow-hidden shadow-2xl">
-                    <img 
-                      src={album.image} 
-                      alt={`${album.title} cover`}
-                      className="w-full h-full object-cover"
-                    />
+            <div className="relative aspect-square max-w-xl mx-auto">
+              {album.image && !imageError ? (
+                <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                  <img 
+                    src={album.image} 
+                    alt={`${album.title} cover`}
+                    className="w-full h-full object-cover"
+                    onError={() => setImageError(true)}
+                  />
+                </div>
+              ) : (
+                <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl bg-card border border-border flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <p className="text-muted-foreground">Şəkil yüklənə bilmədi</p>
                   </div>
                 </div>
               )}
-              
-              <div 
-                className={`relative transition-transform duration-500 ease-out ${
-                  isSpinning ? "translate-x-32" : "translate-x-0"
-                }`}
-                style={{ marginLeft: '40px' }}
-              >
-                <VinylRecord 
-                  size="xl" 
-                  spinning={isSpinning}
-                  vinylColor={album.vinylColor}
-                />
-              </div>
             </div>
           </div>
 
