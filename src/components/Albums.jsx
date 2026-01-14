@@ -7,7 +7,7 @@ const afterHours = {
 const dawnFM = {
   cover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226154/dawnFM_eu62ye.jpg",
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226155/dawnFM_vinyl_qranjt.jpg"],
-  tracklist: ""
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226154/dawnFM_tl_bzgiwy.jpg"
 };
 
 const hurryUpTomorrow = {
@@ -28,11 +28,36 @@ const collegeDropout = {
   tracklist: ""
 };
 
+const dieLit = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768400430/dieLit_uhxjid.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226155/dieLit_vinyl_euhfwp.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768400750/dieLit_tl_btr9pu.jpg"
+};
+
 const musicWhite = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_nd1rsi.jpg',
   vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/musicWhite_vinyl_wfsgve.jpg"],
   tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226167/musicWhite_tl_m74a4g.png",
   features: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicWhite_feats_go3pmr.jpg"
+};
+
+const musicBlack = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_xpnnbu.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226166/musicBlack_vinyl_x17lx8.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226165/musicBlack_tl_qclu5c.jpg",
+  features: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226162/musicBlack_feats_kq6dyk.jpg"
+};
+
+const mbdtf = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf_yjpzve.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226161/mbdtf_vinyl_xmejmc.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226160/mbdtf1_hogcxo.jpg"
+};
+
+const playboiCarti = {
+  cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226172/playboiCarti__noqdit.jpg',
+  vinyl: ["https://res.cloudinary.com/deroy68n9/image/upload/v1768226171/PlayboiCarti1LP_zbp8z0.jpg"],
+  tracklist: "https://res.cloudinary.com/deroy68n9/image/upload/v1768226175/playboiCarti_tl_khsokj.jpg"
 };
 
 const wholeLottaRed = {
@@ -168,7 +193,7 @@ export const albums = [
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768330013/afterHours_animated_siuhga.gif",
     vinylImages: afterHours.vinyl,
     tracklistImage: afterHours.tracklist,
-    vinylColor: "black",
+    vinylColor: "orange",
     sleeveColor: "yellow",
     accentColor: "yellow",
     description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın başlanğıcı."
@@ -186,7 +211,7 @@ export const albums = [
     animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768395800/dawnFM_animated_e7930y.gif",
     vinylImages: dawnFM.vinyl,
     tracklistImage: dawnFM.tracklist,
-    vinylColor: "black",
+    vinylColor: "blue",
     sleeveColor: "blue",
     accentColor: "blue",
     description: "The Weeknd tərəfindən inanılmaz bir trilogiyanın ortası."
@@ -201,7 +226,7 @@ export const albums = [
     isNew: true,
     isExplicit: true,
     image: musicWhite.cover,
-    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768399223/music_syouu6.gif",
+    // animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768399223/music_syouu6.gif",
     vinylImages: musicWhite.vinyl,
     tracklistImage: musicWhite.tracklist,
     featuresImage: musicWhite.features,
@@ -209,5 +234,75 @@ export const albums = [
     sleeveColor: "white",
     accentColor: "white",
     description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 10,
+    title: "MUSIC (Black)",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: true,
+    isExplicit: true,
+    image: musicBlack.cover,
+    vinylImages: musicBlack.vinyl,
+    tracklistImage: musicBlack.tracklist,
+    featuresImage: musicBlack.features,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 11,
+    title: "Die Lit",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2025,
+    isNew: false,
+    isExplicit: true,
+    image: dieLit.cover,
+    vinylImages: dieLit.vinyl,
+    tracklistImage: dieLit.tracklist,
+    vinylColor: "black",
+    sleeveColor: "black",
+    accentColor: "black",
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 12,
+    title: "Playboi Carti",
+    artist: "Playboi Carti",
+    price: 150,
+    genre: "Hip-Hop/Rap",
+    year: 2017,
+    isNew: false,
+    isExplicit: true,
+    image: playboiCarti.cover,
+    vinylImages: playboiCarti.vinyl,
+    tracklistImage: playboiCarti.tracklist,
+    vinylColor: "black",
+    sleeveColor: "yellow",
+    accentColor: "yellow",
+    description: "Playboi Carti-nin 30 mahnıdan ibarət son albomu 5 illik gözləmədən sonra işıq üzü gördü."
+  },
+  {
+    id: 13,
+    title: "My Beautiful Dark Twisted Fantasy",
+    artist: "Kanye West",
+    price: 200,
+    genre: "Hip-Hop/Rap",
+    year: 2010,
+    isNew: false,
+    isExplicit: true,
+    image: mbdtf.cover,
+    vinylImages: mbdtf.vinyl,
+    tracklistImage: mbdtf.tracklist,
+    animatedCover: "https://res.cloudinary.com/deroy68n9/image/upload/v1768404971/mbdtf_animated_xsofzd.gif",
+    vinylColor: "red",
+    sleeveColor: "red",
+    accentColor: "red",
+    description: "Kanye West və onun 14 mahnıdan ibarət Qremmi mükafatını qazanan şah əsəri.."
   },
 ];
