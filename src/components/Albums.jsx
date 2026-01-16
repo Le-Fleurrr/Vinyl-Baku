@@ -184,12 +184,12 @@ const wolf = {
 
 const kidsseeghosts = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226159/kidsSeeGhosts_ecpzks.jpg',
-  vinyl: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226159/kidsSeeGhosts_vinyl_xkqbl9.png',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226159/kidsSeeGhosts_vinyl_xkqbl9.png'],
 };
 
 const vultures1 = {
   cover: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226176/Vultures1_zyoy9u.jpg',
-  vinyl: 'https://res.cloudinary.com/deroy68n9/image/upload/v1768226177/Vultures1_vinyl_xpanyq.jpg',
+  vinyl: ['https://res.cloudinary.com/deroy68n9/image/upload/v1768226177/Vultures1_vinyl_xpanyq.jpg'],
 };
 
 export const albums = [
