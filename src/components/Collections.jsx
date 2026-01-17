@@ -10,7 +10,44 @@ export const Collections = () => {
   const [genreFilter, setGenreFilter] = useState("All");
   const [yearFilter, setYearFilter] = useState("All");
   const [artistFilter, setArtistFilter] = useState("All");
-  const [sortOrder, setSortOrder] = useState("none"); // new state
+  const [sortOrder, setSortOrder] = useState("none");
+
+  const getSleeveColorClass = (color) => {
+    const colorMap = {
+      red: "from-red-500/20 to-transparent",
+      blue: "from-blue-500/20 to-transparent",
+      purple: "from-purple-500/20 to-transparent",
+      green: "from-green-500/20 to-transparent",
+      orange: "from-orange-500/20 to-transparent",
+      pink: "from-pink-500/20 to-transparent",
+      yellow: "from-yellow-500/20 to-transparent",
+      brown: "from-amber-700/20 to-transparent",
+      gray: "from-gray-500/20 to-transparent",
+      white: "from-gray-100/20 to-transparent",
+      black: "from-gray-900/20 to-transparent",
+      default: "from-primary/20 to-transparent"
+    };
+    return colorMap[color || "default"] || colorMap.default;
+  };
+
+  // Function to get border and text hover colors
+  const getAccentColors = (color) => {
+    const colorMap = {
+      red: { border: "border-red-500/50", text: "group-hover:text-red-500" },
+      blue: { border: "border-blue-500/50", text: "group-hover:text-blue-500" },
+      purple: { border: "border-purple-500/50", text: "group-hover:text-purple-500" },
+      green: { border: "border-green-500/50", text: "group-hover:text-green-500" },
+      orange: { border: "border-orange-500/50", text: "group-hover:text-orange-500" },
+      pink: { border: "border-pink-500/50", text: "group-hover:text-pink-500" },
+      yellow: { border: "border-yellow-500/50", text: "group-hover:text-yellow-500" },
+      amber: { border: "border-amber-600/50", text: "group-hover:text-amber-600" },
+      gray: { border: "border-gray-500/50", text: "group-hover:text-gray-500" },
+      white: { border: "border-gray-300/50", text: "group-hover:text-gray-300" },
+      black: { border: "border-gray-800/50", text: "group-hover:text-gray-800" },
+      default: { border: "border-primary/50", text: "group-hover:text-primary" }
+    };
+    return colorMap[color || "default"] || colorMap.default;
+  };
 
   // Apply filters
   let filteredAlbums = albums.filter((album) => {
@@ -121,85 +158,104 @@ export const Collections = () => {
 
         {/* Albums Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredAlbums.map((album) => (
-            <Link
-              to={`/album/${album.id}`} 
-              key={album.id}
-              className="group relative bg-card rounded-xl p-6 border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
-              onMouseEnter={() => setHoveredId(album.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
-              {album.isNew && (
-                <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                  YENI
-                </span>
-              )}
-
-              <div className="relative h-48 flex items-center justify-center mb-6">
-                {album.image && (
-                  <div className="absolute inset-0 flex items-center justify-start pl-4">
-                    <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
-                      <img
-                        src={album.image}
-                        alt={`${album.title} cover`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                )}
-                <div className="absolute w-40 h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-lg transform -rotate-6" />
-                <div
-                  className={`relative transition-transform duration-500 ease-out ${
-                    hoveredId === album.id ? "translate-x-16" : "translate-x-0"
-                  }`}
-                  style={{ marginLeft: "20px" }}
-                >
-                  <VinylRecord
-                    size="md"
-                    spinning={hoveredId === album.id}
-                    vinylColor={album.vinylColor}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-serif text-xl font-bold group-hover:text-primary transition-colors">
-                      {album.title}
-                    </h3>
-                    <p className="text-muted-foreground">{album.artist}</p>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-muted-foreground hover:text-primary shrink-0"
-                  >
-                    <Heart className="w-5 h-5" />
-                  </Button>
-                </div>
-
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="px-2 py-1 bg-secondary rounded">
-                    {album.genre}
+          {filteredAlbums.map((album) => {
+            const accentColors = getAccentColors(album.accentColor);
+            return (
+              <Link
+                to={`/album/${album.id}`}
+                key={album.id}
+                className={`group relative bg-card rounded-xl p-6 border transition-all duration-300 cursor-pointer ${accentColors.border} hover:shadow-lg`}
+                onMouseEnter={() => setHoveredId(album.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
+                {album.isNew && (
+                  <span className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
+                    YENI
                   </span>
-                  <span>•</span>
-                  <span>{album.year}</span>
+                )}
+
+                {/* Vinyl Visual with Album Art */}
+                <div className="relative h-48 flex items-center justify-center mb-6">
+                  {/* Album cover background - FIXED POSITION */}
+                  {album.image && (
+                    <div className="absolute inset-0 flex items-center justify-start pl-4">
+                      <div className="w-40 h-40 rounded-lg overflow-hidden shadow-xl">
+                        <img
+                          src={album.image}
+                          alt={`${album.title} cover`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Background decorative gradient */}
+                  <div className={`absolute w-40 h-40 bg-gradient-to-br ${getSleeveColorClass(album.sleeveColor)} rounded-lg transform -rotate-6`} />
+
+                  {/* Vinyl disc - MOVES on hover */}
+                  <div
+                    className={`relative transition-transform duration-500 ease-out ${
+                      hoveredId === album.id ? "translate-x-16" : "translate-x-0"
+                    }`}
+                    style={{ marginLeft: "20px" }}
+                  >
+                    <VinylRecord
+                      size="md"
+                      spinning={hoveredId === album.id}
+                      vinylColor={album.vinylColor}
+                    />
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
-                  <Button
-                    size="sm"
-                    className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-                  >
-                    <ShoppingCart className="w-4 h-4" />
-                    Add to Cart
-                  </Button>
+                {/* Info */}
+                <div className="space-y-3">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className={`font-serif text-xl font-bold transition-colors ${accentColors.text}`}>
+                          {album.title}
+                        </h3>
+                        {album.isExplicit && (
+                          <span className="text-xs font-bold px-2 py-0.5 bg-muted text-muted-foreground border border-border rounded">
+                            E
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-muted-foreground">{album.artist}</p>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="text-muted-foreground hover:text-primary shrink-0"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <Heart className="w-5 h-5" />
+                    </Button>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span className="px-2 py-1 bg-secondary rounded">
+                      {album.genre}
+                    </span>
+                    <span>•</span>
+                    <span>{album.year}</span>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-border">
+                    <p className="text-2xl font-serif font-bold">{album.price} ₼</p>
+                    <Button
+                      size="sm"
+                      className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <ShoppingCart className="w-4 h-4" />
+                      Səbətə əlavə et
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

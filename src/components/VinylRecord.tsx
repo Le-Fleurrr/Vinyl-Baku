@@ -4,7 +4,7 @@ interface VinylRecordProps {
   size?: "sm" | "md" | "lg" | "xl";
   spinning?: boolean;
   className?: string;
-  vinylColor?: "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear";
+  vinylColor?: "black" | "red" | "blue" | "purple" | "green" | "orange" | "pink" | "clear" | "white" | "yellow" | "brown";
 }
 
 const sizeClasses = {
@@ -14,15 +14,14 @@ const sizeClasses = {
   xl: "w-96 h-96",
 };
 
-export const VinylRecord = ({ 
-  size = "lg", 
-  spinning = false, 
+export const VinylRecord = ({
+  size = "lg",
+  spinning = false,
   className,
   vinylColor = "black"
 }: VinylRecordProps) => {
-  // Define vinyl color styles with actual color values
   const getVinylColorStyle = () => {
-    switch(vinylColor) {
+    switch (vinylColor) {
       case "red":
         return "linear-gradient(to bottom right, #7f1d1d, #991b1b, #450a0a)";
       case "blue":
@@ -37,6 +36,12 @@ export const VinylRecord = ({
         return "linear-gradient(to bottom right, #831843, #be185d, #9f1239)";
       case "clear":
         return "linear-gradient(to bottom right, rgba(228, 228, 231, 0.4), rgba(212, 212, 216, 0.3), rgba(228, 228, 231, 0.4))";
+      case "white":
+        return "linear-gradient(to bottom right, #f5f5f5, #ffffff, #e5e5e5)";
+      case "yellow":
+        return "linear-gradient(to bottom right, #854d0e, #ca8a04, #a16207)";
+      case "brown":
+        return "linear-gradient(to bottom right, #451a03, #78350f, #5c2b0f)";
       case "black":
       default:
         return "linear-gradient(to bottom right, #18181b, #27272a, #09090b)";
@@ -46,12 +51,12 @@ export const VinylRecord = ({
   return (
     <div className={cn("relative", sizeClasses[size], className)}>
       {/* Vinyl disc */}
-      <div 
+      <div
         className={cn(
           "absolute inset-0 rounded-full overflow-hidden",
           spinning && "animate-spin"
         )}
-        style={{ 
+        style={{
           background: getVinylColorStyle()
         }}
       >
@@ -61,16 +66,16 @@ export const VinylRecord = ({
         <div className="absolute inset-[10%] rounded-full border-[1px] border-white/5" />
         <div className="absolute inset-[15%] rounded-full border-[1px] border-white/5" />
         <div className="absolute inset-[20%] rounded-full border-[1px] border-white/5" />
-        
+
         {/* Center label area */}
         <div className="absolute inset-[30%] rounded-full bg-black/80 shadow-2xl border border-white/10" />
-        
+
         {/* Center hole */}
         <div className="absolute inset-[45%] rounded-full bg-background shadow-[inset_0_2px_8px_rgba(0,0,0,0.8)]" />
-        
+
         {/* Shine effect */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/30 via-transparent to-transparent" />
-        
+
         {/* Additional shine for clear vinyl */}
         {vinylColor === "clear" && (
           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/20 to-transparent" />
